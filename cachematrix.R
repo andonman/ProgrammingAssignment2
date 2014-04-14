@@ -1,15 +1,14 @@
-i## First check if MASS package is installed
+## First check if MASS package is installed
 
 if (!is.element('MASS', installed.packages()[,1])) 
 {
     install.packages('MASS')
-    }
-    else
-    {
-        print ("MASS package already installed")
-	}
-	library(MASS)
-
+}
+else
+{
+    print ("MASS package already installed")
+}
+library(MASS)
 
 ## Below are two functions that are used to create a special object that stores
 ## a numeric matrix and cache it's inverse
@@ -29,8 +28,6 @@ if (!is.element('MASS', installed.packages()[,1]))
 ## - set the values of the inverse matrix
 ## - get the values of the inverse matrix
 
-
-
 makeCacheMatrix <- function(x = matrix()) {
     inverse <- NULL
     set <- function(y) {
@@ -45,6 +42,7 @@ makeCacheMatrix <- function(x = matrix()) {
          getinv = getinv)
     
 }
+
 
 ## The following function calculates the inverse of
 ## the matrix, stored in the list that is created
