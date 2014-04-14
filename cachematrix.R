@@ -32,9 +32,19 @@ if (!is.element('MASS', installed.packages()[,1]))
 
 
 makeCacheMatrix <- function(x = matrix()) {
-
+    inverse <- NULL
+    set <- function(y) {
+        x <<- y
+        inverse <<- NULL
+    }
+    get <- function() x
+    setinv <- function(ginv) inverse <<- ginv
+    getinv <- function() inverse
+    list(set = set, get = get, 
+         setinv = setinv,
+         getinv = getinv)
+    
 }
-
 
 ## Write a short comment describing this function
 
